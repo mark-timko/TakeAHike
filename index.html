@@ -23,45 +23,15 @@
 <!-- start of main body section-->
 <body>
     <header class="header container-fluid">
-        <p class="display-4">Weather Dashboard</p>
+        <p class="display-4">Take A Hike</p>
     </header>
 
        <!-- container for weather elements -->
-       <div class="container-fluid">
+       <div class="container-fluid responsive">
         <div class=row>
-            <div class="col-md-3 pl-2">
-                <div class="card" style="width: 22rem;">
-                    <div class="card-body">
-                        <h4>Search for a City:</h4>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="city-input">
-                            </div>
-                        </form>
-                        <button id="search-button" type="submit" class="btn btn-primary"> Search </button>
-                    </div>
-                </div>
-
-                <!-- searched cities go here -->
-                <div>
-                    <ul id="city-list" class="list-group"></ul>
-                </div>
-            </div>
 
             <!-- weather cards -->
             <div class="col-md-9">
-                <div id="current-weather" class='card'>
-                    <div class="card-body">
-                        <div id="city-date-icon">
-                            <span id='city-name'></span>
-                            <span id='current-icon'></span>
-                        </div>
-                        <p class="card-text" id="current-temp"></p>
-                        <p class="card-text" id="current-humidity"></p>
-                        <p class="card-text" id="current-wind"></p>
-                        <p class="card-text" id="current-uv"></p>
-                    </div>
-                </div>
 
                 <!-- five day forecast-->
                 <div class="row">

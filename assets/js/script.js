@@ -1,5 +1,8 @@
  // global variable for API key
  var apiKey = "6b388d2d923733b00f9b381eb173ff19"
+
+ // global variable for parks API
+ var parksApiKey = ""
   
  // create function to search for city and extract api data
  function CityWeather(city, citySearchList) {
