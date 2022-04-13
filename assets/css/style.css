@@ -1,0 +1,13 @@
+/* responsive css for varying screen sizes */
+/* need to address the weather cards by an id that holds them all */
+
+.responsive {
+    flex: 0 70%
+}
+
+
+#forecast-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center/space-between;
+}
