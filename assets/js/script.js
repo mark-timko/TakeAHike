@@ -8,7 +8,7 @@
  function CityWeather(city, citySearchList) {
  
    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=indianapolis" + "&appid=" + apiKey + "&units=imperial";
- 
+   var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=indianapolis" + "&appid=" + apiKey + "&units=imperial";
    $.ajax({
      url: queryURL,
      method: "GET"
@@ -37,7 +37,7 @@
        $("#current-temp").text("Temperature: " + weather.main.temp + " °F");
  
        $.ajax({
-         url: queryURL,
+         url: queryURL2,
          method: "GET"
        }).then(function(forecast) {
  
