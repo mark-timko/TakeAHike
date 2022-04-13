@@ -6,15 +6,8 @@
   
  // create function to search for city and extract api data
  function CityWeather(city, citySearchList) {
-   cityList(citySearchList);
  
-   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
- 
-   var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "&units=imperial";
- 
-   // define lat/lon as variables to use in weather api
-   var latitude;
-   var longitude;
+   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=indianapolis" + "&appid=" + apiKey + "&units=imperial";
  
    $.ajax({
      url: queryURL,
@@ -42,34 +35,11 @@
  
        // use jquery to pull various weather statuses 
        $("#current-temp").text("Temperature: " + weather.main.temp + " °F");
-       $("#current-humidity").text("Humidity: " + weather.main.humidity + "%");
-       $("#current-wind").text("Wind Speed: " + weather.wind.speed + " MPH");
- 
-       latitude = weather.coord.lat;
-       longitude = weather.coord.lon;
  
        $.ajax({
-         url: queryURL3,
+         url: queryURL,
          method: "GET"
-
-       // Create object called UVIndex and store data inside it
-       }).then(function(uvIndex) {
-         console.log(uvIndex);
- 
-         var uvIndexDisplay = $("<button>");
-         uvIndexDisplay.addClass("btn btn-danger");
- 
-         $("#current-uv").text("UV Index: ");
-         $("#current-uv").append(uvIndexDisplay.text(uvIndex[0].value));
-         console.log(uvIndex[0].value);
- 
-         $.ajax({
-           url: queryURL2,
-           method: "GET"
-
-           // create object called forecast and store data inside it
-         }).then(function(forecast) {
-           console.log(queryURL2);
+       }).then(function(forecast) {
  
            console.log(forecast);
            // Loop through the forecast for each of the five days 
@@ -90,5 +60,6 @@
            }
          });
        });
-     });
- }
+     };
+
+ CityWeather();
