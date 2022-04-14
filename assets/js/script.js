@@ -6,12 +6,14 @@
   
  // create function to search for city and extract api data
  function CityWeather(city, citySearchList) {
-   cityList(citySearchList);
+   //cityList(citySearchList);
  
    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
  
    var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "&units=imperial";
  
+  var queryURL3 = "";
+
    // define lat/lon as variables to use in weather api
    var latitude;
    var longitude;
@@ -23,18 +25,22 @@
 
      // create an object called weather to store api data
      .then(function(weather) {
- 
+        console.log(weather);
        var nowMoment = moment();
+      $("#disp-date").empty().text(nowMoment.format("MM/DD/YYYY"));
+      $("#city-name").empty().text(weather.name);
+
+
+      // var displayMoment = $("<h3>");
+      // $("#city-name").empty();
+      // $("#city-name").append(displayMoment.text("(" + nowMoment.format("M/D/YYYY") + ")"));
  
-       var displayMoment = $("<h3>");
-       $("#city-name").empty();
-       $("#city-name").append(displayMoment.text("(" + nowMoment.format("M/D/YYYY") + ")"));
+      //  var cityName = $("<h3>").text(weather.name);
+      //  $("#city-name").prepend(cityName);
  
-       var cityName = $("<h3>").text(weather.name);
-       $("#city-name").prepend(cityName);
- 
-       var weatherIcon = $("<img>");
+       var weatherIcon = $("#weather_icon");
        weatherIcon.attr("src", "https://openweathermap.org/img/w/" + weather.weather[0].icon + ".png");
+      console.log(weather.weather[0].icon);
 
        // use jquery to pull icons from weather api
        $("#current-icon").empty();
@@ -72,6 +78,8 @@
            console.log(queryURL2);
  
            console.log(forecast);
+           
+           //ORIGINAL
            // Loop through the forecast for each of the five days 
            for (var i = 6; i < forecast.list.length; i += 8) {
              var forecastDate = $("<h5>");
@@ -92,3 +100,5 @@
        });
      });
  }
+
+ CityWeather("Indianapolis",null);
