@@ -79,7 +79,7 @@
  
            console.log(forecast);
            
-           //ORIGINAL
+          
            // Loop through the forecast for each of the five days 
            for (var i = 6; i < forecast.list.length; i += 8) {
              var forecastDate = $("<h5>");
