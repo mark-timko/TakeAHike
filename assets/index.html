@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<!-- Basic HTML setup/link references-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- link for google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&family=Work+Sans&display=swap"
+    rel="stylesheet"
+    />
+    <!-- link for CSS -->
+    <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/skeleton.css" />
+    <title>Take a Hike - Homepage</title>
+</head>
+
+<!-- start of main body section-->
+<body>
+    <header class="showcase">
+        <p>Take A Hike</p>
+    </header>
+
+       <!-- container for weather elements -->
+       <div class="container-fluid responsive">
+        <div class=row>
+
+            <!-- weather cards -->
+            <div class="col-md-9">
+
+                <!-- five day forecast-->
+                <div class="row">
+                    <div id="forecast-weather" class="col-md-9">
+                        <h4><b>5-Day Forecast:</b></h4>
+                        <div id="forecast-cards">
+
+                            <!-- day 1 -->
+                            <div class="card forecast">
+                                <div id="forecast1" class="card-body">
+                                    <span class="card-title" id='forecast-date1'></span>
+                                    <span id='forecast-icon1'></span>
+                                    <p class="card-text" id="forecast-temp1"></p>
+                                </div>
+                            </div>
+                            <!-- day 2 -->
+                            <div class="card forecast">
+                                <div id="forecast2" class="card-body">
+                                    <span class="card-title" id='forecast-date2'></span>
+                                    <span id='forecast-icon2'></span>
+                                    <p class="card-text" id="forecast-temp2"></p>
+                                </div>
+                            </div>
+                            <!-- day 3 -->
+                            <div class="card forecast">
+                                <div id="forecast3" class="card-body">
+                                    <span class="card-title" id='forecast-date3'></span>
+                                    <span id='forecast-icon3'></span>
+                                    <p class="card-text" id="forecast-temp3"></p>
+                                </div>
+                            </div>
+                            <!-- day 4 -->
+                            <div class="card forecast">
+                                <div id="forecast4" class="card-body">
+                                    <span class="card-title" id='forecast-date4'></span>
+                                    <span id='forecast-icon4'></span>
+                                    <p class="card-text" id="forecast-temp4"></p>
+                                </div>
+                            </div>
+                            <!--day 5 -->
+                            <div class="card forecast">
+                                <div id="forecast5" class="card-body">
+                                    <span class="card-title" id='forecast-date5'></span>
+                                    <span id='forecast-icon5'></span>
+                                    <p class="card-text" id="forecast-temp5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        Man, did we struggle here - we could not find out how to link the NPS (National Parks Service) API properly to this.
+        We wrote the Javascript to attempt to get it to work but at the end of the day we got a whole lot of things being undefined.
+        We had to mock up what we wanted here. We'll be coming back to this eventually, and would love your help to talk to us about
+        where you think things went wrong.
+
+        If you have the chance, let us know if you see anything egregious that we missed, and hopefully we can talk about it in
+        office hours or something. We want to learn and are disappointed we couldn't get this to work, but hopefully you guys can
+        guide us in the correct direction for the future.
+
+        Here's the link to the NPS API for your own reference: https://www.nps.gov/subjects/developer/api-documentation.htm#/
+    -->
+    <div class="events">
+        <h3>Upcoming Park Events for Indiana!</h3>
+        <p>04/16/2022</p>
+        <p>Indiana Dunes National Park - Drop In Volunteering Program</p>
+        <br />
+        <p>04/16/2022</p>
+        <p>Indiana Dunes National Park - Native Plant Talks</p>
+        <br />
+        <p>04/17/2022</p>
+        <p>Indiana Dunes National Park - Miller Woods Hike on the Paul H. Douglas Trail</p>
+    </div>
+  
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>  
+  </body>
+</html>
